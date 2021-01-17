@@ -4,7 +4,7 @@ While knowledge of V8 specifics is obviously required to complete these problems
 
 Not intended to be too difficult. 
 
-## Problem 1
+## Problem 1 - Kit Engine
 ### Goal
 Basic familiarity with the v8 codebase & writing exploits in JS
 ### Implementation
@@ -31,6 +31,7 @@ TBD. Need to figure out how to make something that isn't too crazy
 ## TODO List
 - Easy build process (maybe model after v8builder in Fuzzilli)? Provide everything to the players
 - Basic unintended soltuion prevention (have problems served over the network to avoid CLI flag weirdness, etc)
+    - Need to remove load, import. What else??
 - Integrate into the pico platform
     - Witty challenge names, descriptions, and flags!
 - Ensure problems are updated to recent v8 version close to the competition, to prevent public N-days from being repurposed
@@ -39,3 +40,5 @@ TBD. Need to figure out how to make something that isn't too crazy
 Implement if time
 - Add a problem that takes one of these vulns, adds it to Chromium, and then visits a url provided by the player
     - Maybe chain with an XSS problem?
+
+## Thanks
