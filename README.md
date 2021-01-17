@@ -8,7 +8,7 @@ Not intended to be too difficult.
 ### Goal
 Basic familiarity with the v8 codebase & writing exploits in JS
 ### Implementation
-Adds a builtin fucntion that accepts a float, does a comparison against a hex constant, and provides the flag if they're equal
+Adds a builtin that takes a Number array, copies it to RWX memory, and executes it. Gets the player comfortable with writing exploits in JS and looking at the V8 codebase.
 
 ## Problem 2
 ### Goal
@@ -29,7 +29,7 @@ Baby's first turbofan exploit
 TBD. Need to figure out how to make something that isn't too crazy
 
 ## TODO List
-- Easy build process (maybe model after v8builder in Fuzzilli)? Provide everything to the players
+- Easy build process (maybe model after v8builder in Fuzzilli?) Provide everything to the players
 - Basic unintended soltuion prevention (have problems served over the network to avoid CLI flag weirdness, etc)
     - Need to remove load, import. What else??
 - Integrate into the pico platform
