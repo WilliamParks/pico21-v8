@@ -1,6 +1,6 @@
 This series of challenges focuses on V8 at an introductory level.
 
-While knowledge of V8 specifics is obviously required to complete these problems, we're trying to avoid overfitting to v8.
+While knowledge of V8 specifics is required to complete these problems, we're trying to avoid overfitting to v8.
 
 Not intended to be too difficult. 
 
@@ -10,7 +10,7 @@ Basic familiarity with the v8 codebase & writing exploits in JS
 ### Implementation
 Adds a builtin that takes a Number array, copies it to RWX memory, and executes it. Gets the player comfortable with writing exploits in JS and looking at the V8 codebase.
 
-## Problem 2
+## Problem 2 - Download Horsepower
 ### Goal
 Familiarity with V8 memory layout, and how to leverage arbitrary read/write techniques to get code execution
 ### Implementation
@@ -29,9 +29,8 @@ Baby's first turbofan exploit
 TBD. Need to figure out how to make something that isn't too crazy
 
 ## TODO List
-- Easy build process (maybe model after v8builder in Fuzzilli?) Provide everything to the players
 - Basic unintended soltuion prevention (have problems served over the network to avoid CLI flag weirdness, etc)
-    - Need to remove load, import. What else??
+    - Removed a bunch of builtins, but need to verify that covers everythings
 - Integrate into the pico platform
     - Witty challenge names, descriptions, and flags!
 - Ensure problems are updated to recent v8 version close to the competition, to prevent public N-days from being repurposed
