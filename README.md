@@ -16,29 +16,12 @@ Familiarity with V8 memory layout, and how to leverage arbitrary read/write tech
 ### Implementation
 Adds a builtin to set JSArray length to arbitrary value. 
 
-## Problem 3
-### Goal
-More complex memory corruption, requiring understanding of maps and data representations.
-### Implemntation
-Map switch between two objects (Arrays? What data type make sense here? TBD)
-
 ## Problem 4 - Turboflan
 ### Goal
 Baby's first turbofan exploit
 ### Implementation
-TBD. Need to figure out how to make something that isn't too crazy
-
-## TODO List
-- Basic unintended soltuion prevention (have problems served over the network to avoid CLI flag weirdness, etc)
-    - Removed a bunch of builtins, but need to verify that covers everythings
-- Integrate into the pico platform
-    - Witty challenge names, descriptions, and flags!
-- Ensure problems are updated to recent v8 version close to the competition, to prevent public N-days from being repurposed
-
-## Good ideas
-Implement if time
-- Add a problem that takes one of these vulns, adds it to Chromium, and then visits a url provided by the player
-    - Maybe chain with an XSS problem?
+Removes the interals of CheckMaps, so easy typeconfusion
 
 ## Thanks
 The Docker build process is a modified version of the one from [Fuzzilli](https://github.com/googleprojectzero/fuzzilli/tree/master/Cloud/Docker/V8Builder)
+Server.py is based on the infra from DownUnder CTF 2020 (which contained my first v8 challenge solve!)
